@@ -8,4 +8,6 @@ services:
             MYSQL_DATABASE: test
         volumes: 
             - ./database:/data/db
+        ports:
+            - 3306:3306
         restart: unless-stopped
