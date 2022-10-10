@@ -23,3 +23,23 @@ Enter password:
 sudo docker exec -it mysql mysql -u 'USERNAME' -p
 Enter password:
 ```
+
+
+**Import data to DB**
+
+*mongodb*
+
+1. create user of db
+```
+> use DB_NAME
+> db.createUser({user:USERNAME,pwd:PASSWORD, roles:[{role:"readWrite", db:DB_NAME}]})
+```
+2. using mongoimport at terminal
+```
+mongoimport --uri="mongodb://USERNAME:PASSWORD@localhost:27017/DB_NAME" --collection=COLL_NAME --file xxx.json
+```
+
+*mysql*
+```
+sudo docker exec -i mysql-container mysql -uuser -ppassword name_db < data.sql
+```
