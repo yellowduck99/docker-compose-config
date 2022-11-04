@@ -43,3 +43,19 @@ mongoimport --uri="mongodb://USERNAME:PASSWORD@localhost:27017/DB_NAME" --collec
 ```
 sudo docker exec -i mysql-container mysql -uuser -ppassword name_db < data.sql
 ```
+
+**Export data from DB**
+
+*mongodb*
+
+using mongoexport at terminal
+```
+mongoexport --uri="mongodb://USERNAME:PASSWORD@localhost:27017/DB_NAME" --collection COLL_NAME --out xxx.json --forceTableScan
+```
+
+*mysql*
+
+Using mysqldump at terminal
+```
+sudo docker exec mysql-container mysqldump -uuser -ppassword name_db > backup.sql
+```
